@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		{ id: 23, desc: 'Private balcony view of the jacuzzi, infinity pool, and playground' },
 		{ id: 20, desc: 'Beautiful Santorini Building with modern architecture' },
 		{ id: 11, desc: 'Second bedroom with custom-crafted queen bed and pull-out twins' },
-		{ id: 14, desc: 'Third bedroom with queen bed and private workspace' },
+		{ id: 13, desc: 'Third bedroom with queen bed and private workspace' },
 		{ id: 29, desc: 'BBQ area with ocean views' },
 	]
 
