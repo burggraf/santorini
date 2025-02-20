@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Beachfront Condo in Manta, Ecuador</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">Manta Luxury Living</a>
+            <div class="nav-links">
+                <a href="#gallery">Gallery</a>
+                <a href="#amenities">Amenities</a>
+                <a href="#location">Location</a>
+                <a href="#contact" class="cta-button">Inquire Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Luxury Beachfront Living in Manta</h1>
+            <p>Experience breathtaking ocean views from our oversized wrap-around balcony</p>
+            <a href="#contact" class="cta-button">Book Your Stay</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="about" class="about">
+            <div class="container">
+                <h2>Welcome to Paradise</h2>
+                <div class="features-grid">
+                    <div class="feature">
+                        <i class="fas fa-home"></i>
+                        <h3>Spacious Living</h3>
+                        <p>3 bedrooms, 3 bathrooms, over 3200 square feet of indoor/outdoor living space</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-wifi"></i>
+                        <h3>Always Connected</h3>
+                        <p>High-speed WiFi with UPS backup for uninterrupted connectivity</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-utensils"></i>
+                        <h3>Gourmet Kitchen</h3>
+                        <p>Fully equipped kitchen with ocean views and outdoor BBQ area</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>24/7 Security</h3>
+                        <p>Doorman and security personnel for your peace of mind</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="gallery">
+            <div class="container">
+                <h2>Photo Gallery</h2>
+                <div class="gallery-grid">
+                    <!-- Gallery images will be inserted here via JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <section id="amenities" class="amenities">
+            <div class="container">
+                <h2>Luxury Amenities</h2>
+                <div class="amenities-grid">
+                    <div class="amenity-category">
+                        <h3><i class="fas fa-eye"></i> Views</h3>
+                        <ul>
+                            <li>Beach view</li>
+                            <li>Ocean view</li>
+                            <li>Pool view</li>
+                            <li>Garden view</li>
+                        </ul>
+                    </div>
+                    <div class="amenity-category">
+                        <h3><i class="fas fa-swimming-pool"></i> Recreation</h3>
+                        <ul>
+                            <li>Infinity pool</li>
+                            <li>Hot tub</li>
+                            <li>Private beach access</li>
+                            <li>Children's playground</li>
+                        </ul>
+                    </div>
+                    <div class="amenity-category">
+                        <h3><i class="fas fa-tv"></i> Entertainment</h3>
+                        <ul>
+                            <li>50" HDTV with Fire TV</li>
+                            <li>TVs in all bedrooms</li>
+                            <li>High-speed WiFi</li>
+                            <li>Dedicated workspace</li>
+                        </ul>
+                    </div>
+                    <div class="amenity-category">
+                        <h3><i class="fas fa-kitchen-set"></i> Kitchen</h3>
+                        <ul>
+                            <li>Full gourmet kitchen</li>
+                            <li>Outdoor BBQ area</li>
+                            <li>Indoor & outdoor dining</li>
+                            <li>Complete cooking equipment</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="location" class="location">
+            <div class="container">
+                <h2>Prime Location</h2>
+                <div class="location-content">
+                    <div class="map">
+                        <iframe width="100%" height="450" style="border:0" loading="lazy" allowfullscreen
+                            src="https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY&q=-0.9420958,-80.7359923">
+                        </iframe>
+                    </div>
+                    <div class="location-details">
+                        <h3>Perfectly Situated</h3>
+                        <p>Located directly on Murciélago Beach with stunning ocean views</p>
+                        <ul>
+                            <li><i class="fas fa-shopping-cart"></i> 3-5 minute walk to Mall Del Pacifico</li>
+                            <li><i class="fas fa-umbrella-beach"></i> Private elevator to beach</li>
+                            <li><i class="fas fa-car"></i> 2 dedicated parking spaces</li>
+                            <li><i class="fas fa-store"></i> Close to restaurants and shopping</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2>Request Information</h2>
+                <form id="inquiry-form" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dates">Desired Dates</label>
+                        <input type="text" id="dates" name="dates">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="cta-button">Send Inquiry</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Manta Luxury Living</h3>
+                    <p>Luxury beachfront condo in the Santorini Building</p>
+                    <p>Manta, Ecuador</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#gallery">Gallery</a>
+                    <a href="#amenities">Amenities</a>
+                    <a href="#location">Location</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal" id="gallery-modal">
+        <span class="close-modal">&times;</span>
+        <img id="modal-image" src="" alt="">
+        <div class="modal-caption"></div>
+        <button class="modal-prev">&lt;</button>
+        <button class="modal-next">&gt;</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
