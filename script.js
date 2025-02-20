@@ -1,6 +1,49 @@
 document.addEventListener('DOMContentLoaded', () => {
-	// Image gallery data with descriptions
-	const galleryImages = [
+	// Full gallery data with descriptions
+	const allGalleryImages = [
+		{ id: 1, desc: 'Living Room & Dining Room with access to the oversized wrap around balcony' },
+		{ id: 2, desc: 'Huge balcony meeting/work space directly overlooking the Pacific Ocean' },
+		{ id: 3, desc: 'Bonus hall sitting area with high speed Internet and UPS backup' },
+		{ id: 4, desc: 'Huge fully-stocked kitchen area with tons of counter space' },
+		{
+			id: 5,
+			desc: 'Grand kitchen with everything including dishwasher, oven, and RO water system',
+		},
+		{ id: 6, desc: 'Great 5-burner stove built into the island with ocean view' },
+		{ id: 7, desc: 'Large kitchen perfect for entertaining or morning coffee' },
+		{ id: 8, desc: 'Comfortable dining table with spectacular ocean view' },
+		{ id: 9, desc: 'Indoor dining area seats 8' },
+		{ id: 10, desc: 'Extra large primary bedroom with king bed and en suite bathroom' },
+		{ id: 11, desc: 'Second bedroom with custom-crafted queen bed and pull-out twins' },
+		{ id: 12, desc: 'Great private storage space in every room' },
+		{ id: 13, desc: 'The 3rd bedroom has a queen bed and private workspace' },
+		{ id: 15, desc: 'Cute yet ample-sized guest bathroom off main entryway' },
+		{ id: 16, desc: '' },
+		{ id: 17, desc: '' },
+		{ id: 18, desc: 'Laundry room with full washer & dryer and utility bathroom' },
+		{ id: 19, desc: 'Full outdoor kitchen cooking area with ocean views' },
+		{ id: 20, desc: 'Beautiful Santorini Building with modern architecture' },
+		{ id: 21, desc: 'The Santorini Building' },
+		{ id: 22, desc: '24/7 security with doorman and crew' },
+		{ id: 23, desc: 'Private balcony view of jacuzzi, infinity pool, and playground' },
+		{ id: 24, desc: 'View of Murciélago Beach from the beach elevator' },
+		{ id: 25, desc: 'Beautiful infinity pool with lounge area' },
+		{ id: 26, desc: 'Swim up to the infinity edge and look out over the beach' },
+		{ id: 27, desc: 'Beautifully decorated, large entry/hall way' },
+		{ id: 28, desc: 'The oversized entry space gives a nice open feel' },
+		{ id: 29, desc: 'BBQ area with ocean and kite surfer views' },
+		{ id: 30, desc: 'Newly remodeled BBQ area with outdoor dining' },
+		{ id: 31, desc: 'Working outside on the balcony couches? This is your view!' },
+		{ id: 32, desc: 'Beach elevator with clean-up room and playground view' },
+		{ id: 33, desc: 'View of the building from the beach' },
+		{ id: 34, desc: 'Spectacular sunset views' },
+		{ id: 35, desc: 'Beautiful sunset photo opportunities daily' },
+		{ id: 36, desc: 'Always have your camera ready at the beach' },
+		{ id: 37, desc: 'Mall Del Pacifico just 3-5 minutes away' },
+	]
+
+	// Featured images for main gallery view
+	const featuredImages = [
 		{ id: 26, desc: 'Swim up to the infinity edge and look out over the beach' },
 		{ id: 31, desc: 'Working outside on the balcony couches? This is your view!' },
 		{ id: 1, desc: 'Living Room & Dining Room with access to the oversized wrap around balcony' },
@@ -11,25 +54,51 @@ document.addEventListener('DOMContentLoaded', () => {
 		{ id: 23, desc: 'Private balcony view of the jacuzzi, infinity pool, and playground' },
 		{ id: 20, desc: 'Beautiful Santorini Building with modern architecture' },
 		{ id: 11, desc: 'Second bedroom with custom-crafted queen bed and pull-out twins' },
-		{ id: 13, desc: 'Third bedroom with queen bed and private workspace' },
+		{ id: 13, desc: 'Great private workspace & TV' },
 		{ id: 29, desc: 'BBQ area with ocean views' },
 	]
+
+	let currentGalleryImages = featuredImages
+	let isShowingAll = false
 
 	// Initialize gallery
 	const galleryGrid = document.querySelector('.gallery-grid')
 	let currentImageIndex = 0
 
-	galleryImages.forEach((img, index) => {
-		const galleryItem = document.createElement('div')
-		galleryItem.className = 'gallery-item'
-		galleryItem.innerHTML = `
-            <img src="images/${img.id.toString().padStart(2, '0')}.jpeg" 
-                 alt="${img.desc}"
-                 loading="lazy">
-        `
-		galleryItem.addEventListener('click', () => openModal(index))
-		galleryGrid.appendChild(galleryItem)
+	function updateGallery() {
+		galleryGrid.innerHTML = ''
+		currentGalleryImages.forEach((img, index) => {
+			const galleryItem = document.createElement('div')
+			galleryItem.className = 'gallery-item'
+			galleryItem.innerHTML = `
+                <img src="images/${img.id.toString().padStart(2, '0')}.jpeg" 
+                     alt="${img.desc}"
+                     loading="lazy">
+            `
+			galleryItem.addEventListener('click', () => openModal(index))
+			galleryGrid.appendChild(galleryItem)
+		})
+	}
+
+	// Add "View All Photos" button
+	const gallerySection = document.querySelector('#gallery .container')
+	const viewAllButton = document.createElement('button')
+	viewAllButton.className = 'cta-button view-all-btn'
+	viewAllButton.textContent = 'View All Photos'
+	viewAllButton.style.margin = '2rem auto'
+	viewAllButton.style.display = 'block'
+
+	viewAllButton.addEventListener('click', () => {
+		isShowingAll = !isShowingAll
+		currentGalleryImages = isShowingAll ? allGalleryImages : featuredImages
+		viewAllButton.textContent = isShowingAll ? 'Show Featured Photos' : 'View All Photos'
+		updateGallery()
 	})
+
+	gallerySection.appendChild(viewAllButton)
+
+	// Initial gallery setup
+	updateGallery()
 
 	// Modal functionality
 	const modal = document.getElementById('gallery-modal')
@@ -47,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	function updateModalImage() {
-		const img = galleryImages[currentImageIndex]
+		const img = currentGalleryImages[currentImageIndex]
 		modalImg.src = `images/${img.id.toString().padStart(2, '0')}.jpeg`
 		modalCaption.textContent = img.desc
 	}
@@ -58,12 +127,13 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 
 	function nextImage() {
-		currentImageIndex = (currentImageIndex + 1) % galleryImages.length
+		currentImageIndex = (currentImageIndex + 1) % currentGalleryImages.length
 		updateModalImage()
 	}
 
 	function prevImage() {
-		currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length
+		currentImageIndex =
+			(currentImageIndex - 1 + currentGalleryImages.length) % currentGalleryImages.length
 		updateModalImage()
 	}
 
