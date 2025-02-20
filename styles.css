@@ -248,6 +248,57 @@ section h2 {
 	gap: var(--spacing-md);
 }
 
+.map {
+	height: 450px;
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+.map-placeholder {
+	display: block;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	text-decoration: none;
+}
+
+.map-image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 0.3s ease;
+}
+
+.map-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.5);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	color: var(--white);
+	font-size: 1.2rem;
+	opacity: 0.8;
+	transition: opacity 0.3s ease;
+}
+
+.map-overlay i {
+	font-size: 2.5rem;
+	margin-bottom: 1rem;
+}
+
+.map-placeholder:hover .map-image {
+	transform: scale(1.05);
+}
+
+.map-placeholder:hover .map-overlay {
+	opacity: 1;
+}
+
 .location-details ul {
 	list-style: none;
 	margin-top: var(--spacing-md);
