@@ -165,7 +165,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 		// Here you would typically send this data to a server
 		// For now, we'll just show a success message
-		alert('Thank you for your inquiry! We will contact you soon.')
+		//alert('Thank you for your inquiry! We will contact you soon.')
+		alert(
+			'This form is not currently connected to a server. Please email santorini@dmarie.com for more information.'
+		)
 		form.reset()
 	})
 
