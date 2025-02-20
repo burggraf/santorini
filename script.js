@@ -150,28 +150,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		}
 	})
 
-	// Form submission
-	const form = document.getElementById('inquiry-form')
-	form.addEventListener('submit', (e) => {
-		e.preventDefault()
-
-		// Collect form data
-		const formData = {
-			name: form.name.value,
-			email: form.email.value,
-			dates: form.dates.value,
-			message: form.message.value,
-		}
-
-		// Here you would typically send this data to a server
-		// For now, we'll just show a success message
-		//alert('Thank you for your inquiry! We will contact you soon.')
-		alert(
-			'This form is not currently connected to a server. Please email santorini@dmarie.com for more information.'
-		)
-		form.reset()
-	})
-
 	// Smooth scroll for navigation links
 	document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 		anchor.addEventListener('click', function (e) {
